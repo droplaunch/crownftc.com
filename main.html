@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crown FTC | Robotics Team</title>
+  <link rel="icon" href="logo.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Share Tech Mono', monospace;
+      background: #ffffff;
+      color: #000000;
+      overflow-x: hidden;
+    }
+
+    #intro {
+      height: 100vh;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .glitch {
+      font-size: 3rem;
+      position: relative;
+      color: #000000;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #000000;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      color: #ffffff;
+      font-size: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    main {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .hero, .about, .robots, .achievements, .sponsors, .impact, .socials {
+      padding: 2rem;
+      margin: 1rem auto;
+      width: 90%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .hero {
+      text-align: center;
+      background: #ffffff;
+      color: #000000;
+    }
+
+    .about {
+      background: #000000;
+      color: #ffffff;
+    }
+
+    .robots, .impact, .socials {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    .achievements {
+      background: #000000;
+      color: #ffffff;
+    }
+
+    .sponsors {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 1rem;
+      padding: 0.5rem 0;
+    }
+
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+.socials {
+  padding: 2rem;
+  margin: 1rem auto;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.social-icons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social-button {
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-button:hover {
+  transform: scale(1.2);
+  color: #0e76a8; /* LinkedIn blue for effect */
+}
+    .social-button svg {
+      width: 40px;
+      height: 40px;
+    } 
+    .social-button:hover svg {
+      fill: #0e76a8; /* LinkedIn blue for effect */
+    }
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+    .carousel::-moz-scrollbar {
+      display: none;
+    } 
+    .carousel::-ms-scrollbar {
+      display: none;
+    }
+    .carousel::-o-scrollbar {
+      display: none;
+    }
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+    .carousel::-moz-scrollbar {
+      display: none;
+    }
+    .carousel::-ms-scrollbar {
+      display: none;
+    }
+    .carousel::-o-scrollbar {
+      display: none;
+    }
+    .slide {
+      flex: 0 0 60%;
+      scroll-snap-align: start;
+      background: #f0f0f0;
+      border: 1px solid #000;
+      padding: 0.75rem;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 4%;
+    }
+
+    footer {
+      background: #000000;
+      text-align: center;
+      padding: 1rem;
+      color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      .hero, .about, .robots, .achievements, .sponsors, .impact, .socials {
+        padding: 1rem;
+        width: 95%;
+      }
+      .slide {
+        flex: 0 0 85%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="intro">
+    <img src="logo.png" width="300" height="300" alt="Crown FTC Logo" class="logo" />
+    <h1 class="glitch" data-text="CROWN FTC">CROWN FTC</h1>
+    <p class="tagline">Innovating Beyond Limits</p>
+    <button onclick="enterSite()">Enter Site</button>
+  </div>
+  <main id="main" style="display: none;">
+    <section class="hero">
+      <h1>Welcome to Crown FTC</h1>
+      <p>Innovating Beyond Limits | UAE x India x APOC 2025</p>
+    </section>
+    <section class="about">
+      <h2>About Us</h2>
+      <p>
+        Crown is a student-led FTC robotics team founded in 2024. We are passionate about engineering, competition, and collaboration.
+      </p>
+    </section>
+    <section class="robots">
+      <h2>Our Creations</h2>
+      <div class="carousel">
+        <div class="slide">
+          <strong>EXCALIBUR I</strong>
+          <p>Advanced stainless steel intake system optimized for precision and durability.</p>
+          <img src="assets/excalibur1.png" alt="EXCALIBUR I" />
+        </div>
+        <div class="slide">
+          <strong>EXCALIBUR II</strong>
+          <p>Iterative refinement with dual-arm modularity and optimized claw intake.</p>
+          <img src="assets/excalibur2.png" alt="EXCALIBUR II" />
+        </div>
+      </div>
+    </section>
+    <section class="robots">
+      <h2>Our Collaborations</h2>
+      <div class="carousel">
+        <div class="slide">
+          <strong>SITHS SATURN</strong>
+           <p>Collaboration on advanced drivetrain concepts with Siths Saturn, exchanging insights on CAD design, differential systems, and high-traction maneuverability.
+</p>
+          <img src="assets/siths_saturn.png" alt="SITHS SATURN" />
+        </div>
+        <div class="slide">
+          <strong>HAZMAT</strong>
+          <p>Technical discussions and testing feedback with team Hazmat on modular frames, rapid deployment design, and competition-ready prototyping.</p>
+          <img src="assets/hazmat.png" alt="HAZMAT" />
+        </div>
+        <div class="slide">
+          <strong>U-FORCE</strong>
+          <p>Strategy, support, and collaboration with UAE-based team U-Force to exchange ideas and mechanisms.</p>
+          <img src="assets\uforce.png" alt="UFORCE" />
+        </div>
+        <div class="slide">
+          <strong>G-FORCE</strong>
+          <p>Cross-regional insights and brainstorming on outreach, hardware, and scoring innovations with team G-Force.</p>
+                    <img src="assets\gforce.png" alt="GFORCE" />
+        </div>
+        <div class="slide">
+          <strong>The Digital Error Collective</strong>
+          <p>Brainstormed digital media ideas, merchandise, a collab album and a documentary <strong>40 Days @ SpaceBox</strong> narrating the journey till the day of the competition shot by our team member Gokul</p>
+          <img src="assets/digitalerror.jpg" alt="Digital Error Collective" />
+        </div>
+      </div>
+    </section>
+    <section class="impact">
+      <h2>Outreach</h2>
+      <div class="carousel">
+        <div class="slide">
+          <strong>AI Week – DPS Dubai</strong>
+          <p>We showcased our robot, introduced students to STEM careers, and demonstrated drive systems, sensors, and control logic.</p>
+          <img src="assets/ai_week.png" alt="AI Week – DPS Dubai" />
+        </div>
+        <div class="slide">
+          <strong>DPSD Vocals</strong>
+          <p>Podcast feature about FTC robotics, team dynamics, and STEM experiences with Crown FTC members.</p>
+          <img src="assets/dpsdvocals.png" alt="DPSD Vocals" />
+        </div>
+        <div class="slide">
+          <strong>F1 in Schools Mentorship</strong>
+          <p>Guided two F1 in Schools teams with technical mentorship and project planning advice.</p>
+          <img src="assets/blaze.png" alt="F1 in Schools Mentorship" />
+                    <img src="assets/impulse.png" alt="F1 in Schools Mentorship" />
+        </div>
+        <div class="slide">
+          <strong>ExoMath STEM Fair</strong>
+          <p>Presented our robots, coding methods, and design process in an open forum for public STEM awareness.</p>
+          <img src="assets/visions25.png" alt="ExoMath STEM Fair" />
+        </div>
+        <div class="slide">
+          <strong>Merchandise and Digital Media</strong>
+          <p>We designed our own merchandise ranging from a selection of hoodies, bands and our digital promotions were done by our team member Gokul who represented his collective, The Digital Error to shoot music videos and bring a collboration album in fruitition </p>
+        <img src="assets/merch.png" alt="merch" />
+        </div>
+      </div>
+    </section>
+    <section class="team-gallery">
+  <h2>Team Gallery</h2>
+  <div class="gallery-grid">
+    <img src="assets/team meeting.png" alt="Team Meeting">
+    <img src="assets/theteam.png" alt="The Team">
+    <img src="assets/judges.png" alt="Showcasing Our Work">
+    <img src="assets/winners.png" alt="Winning Moment">
+    <img src="assets/brainstorm.jpg" alt="Strategy Session">
+    <img src="assets/planout.jpg" alt="Planning Session">
+    <img src="assets/outreach.png" alt="Outreach">
+    <img src="assets/networking.png" alt="Networking">
+    <img src="assets/visions25.png" alt="Peer Showcase">
+    <img src="assets/linkedin.png" alt="LinkedIn">
+    <img src="assets/ai_week.png" alt="Networking">
+    <img src="assets/insta.png" alt="Peer Showcase">
+  </div>
+</section>
+
+<style>
+  .team-gallery {
+    padding: 2rem;
+    margin: 1rem auto;
+    width: 90%;
+    background: #ffffff;
+    color: #000000;
+    border-radius: 10px;
+  }
+
+  .team-gallery h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .gallery-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+</style>
+  <section class="socials">
+  <h2>Follow Us</h2>
+  <div class="social-icons">
+    <a href="https://instagram.com/crown.ftc" target="_blank" class="social-button" aria-label="Instagram">
+      <!-- Instagram SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 5.373a2.627 2.627 0 1 0 0 5.254 2.627 2.627 0 0 0 0-5.254z"/>
+        <path d="M11.717 0H4.283C1.915 0 0 1.915 0 4.283v7.434C0 14.085 1.915 16 4.283 16h7.434C14.085 16 16 14.085 16 11.717V4.283C16 1.915 14.085 0 11.717 0zM8 12.133A4.133 4.133 0 1 1 8 3.867a4.133 4.133 0 0 1 0 8.266zM13.333 4.016a.986.986 0 1 1-1.972 0 .986.986 0 0 1 1.972 0z"/>
+      </svg>
+    </a>
+
+    <a href="https://linkedin.com/crownftc" target="_blank" class="social-button" aria-label="LinkedIn">
+      <!-- LinkedIn SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4z"/>
+      </svg>
+    </a>
+
+    <a href="mailto:team@crownftc.com" class="social-button" aria-label="Email">
+      <!-- Envelope SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+    <section class="impact">
+      <h2>Our Impact</h2>
+      <p>
+        We aim to inspire the next generation of engineers and innovators through outreach, mentorship, and community engagement.
+      </p>
+    </section>
+    <section class="achievements">
+      <h2>Achievements</h2>
+      <ul>
+        <li>🏆 Innovate Award – India Nationals</li>
+        <li>🏆 Winning Alliance Captain – UAE Nationals</li>
+        <li>🏆 Think Award – UAE Nationals</li>
+      </ul>
+    </section>
+    <section class="sponsors">
+      <h2>Support Us</h2>
+      <p>Partner with us to promote STEM education and innovation.</p>
+      <button><a href="mailto:" style="color: white; text-decoration: none;">Become a Sponsor</a></button>
+    </section>
+    <footer>
+      <p>&copy; 2025 Crown FTC | Built by the Team</p>
+    </footer>
+  </main>
+  <script>
+    function enterSite() {
+      document.getElementById("intro").style.display = "none";
+      document.getElementById("main").style.display = "block";
+    }
+  </script>
+</body>
+</html>
