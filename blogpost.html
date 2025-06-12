@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crown Robot Logs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Share Tech Mono', monospace;
+      background: #fff;
+      color: #000;
+    }
+    header, nav {
+      background: #000;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+    .countdown {
+      text-align: center;
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+    section {
+      padding: 2rem;
+      border-bottom: 1px solid #ccc;
+    }
+    .blog-posts, .archive-posts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .blog-post {
+      background: #000;
+      color: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      width: calc(33% - 1rem);
+      cursor: pointer;
+    }
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .image-gallery img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    footer {
+      background: #000;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .popup-content {
+      background: #000;
+      padding: 2rem;
+      max-width: 600px;
+      border-radius: 8px;
+      position: relative;
+    }
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .reactions span {
+      margin: 0 0.5rem;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+    .social-icons img {
+      width: 24px;
+      margin: 0 0.5rem;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body onload="initCountdown()">
+  <header>
+    <h1>Crown Robot Logs</h1>
+  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#posts">Blog Posts</a>
+    <a href="#archive">Archive</a>
+    <a href="#images">Images</a>
+  </nav>
+  <div class="countdown">T-minus <span id="timer"></span> until AOC Into the Deep 2025</div>
+
+  <section id="posts">
+    <h2>📒 Latest Blog Posts</h2>
+    <div class="blog-posts">
+      <div class="blog-post" onclick="openPopup('Post Title 1', 'Content of blog post 1 goes here...')">Post Title 1</div>
+      <div class="blog-post" onclick="openPopup('Post Title 2', 'Content of blog post 2 goes here...')">Post Title 2</div>
+      <div class="blog-post" onclick="openPopup('Post Title 3', 'Content of blog post 3 goes here...')">Post Title 3</div>
+    </div>
+  </section>
+
+  <section id="archive">
+    <h2>🗂️ Archive</h2>
+    <div class="archive-posts">
+      <div class="blog-post" onclick="openPopup('Old Log 1', 'Archived post content here...')">Old Log 1</div>
+      <div class="blog-post" onclick="openPopup('Old Log 2', 'Another archived post...')">Old Log 2</div>
+    </div>
+  </section>
+
+  <section id="images">
+    <h2>📷 Image Gallery</h2>
+    <div class="image-gallery">
+      <img src="https://via.placeholder.com/200" alt="Robot 1" />
+      <img src="https://via.placeholder.com/200" alt="Robot 2" />
+      <img src="https://via.placeholder.com/200" alt="Robot 3" />
+    </div>
+  </section>
+
+  <footer>
+    <div class="social-icons">
+      <a href="mailto:team@example.com"><img src="https://img.icons8.com/ios-filled/50/ffffff/email.png" alt="Email"></a>
+      <a href="https://instagram.com/crown_ftc" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"></a>
+      <a href="https://twitch.tv/crown_ftc" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/twitch.png" alt="Twitch"></a>
+      <a href="https://linkedin.com/in/crown_ftc" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn"></a>
+    </div>
+    <p>&copy; 2025 Crown FTC</p>
+  </footer>
+
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <div class="popup-close" onclick="closePopup()">&times;</div>
+      <h3 id="popup-title"></h3>
+      <p id="popup-text"></p>
+      <div class="reactions">
+        <span onclick="alert('You liked this!')">👍</span>
+        <span onclick="alert('You loved this!')">❤️</span>
+        <span onclick="alert('You laughed!')">😂</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function initCountdown() {
+      const compTime = new Date("July 15, 2025 15:00:00").getTime();
+      const timerEl = document.getElementById("timer");
+      setInterval(() => {
+        const now = new Date().getTime();
+        const distance = compTime - now;
+        if (distance > 0) {
+          const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const s = Math.floor((distance % (1000 * 60)) / 1000);
+          timerEl.innerText = `${d}d ${h}h ${m}m ${s}s`;
+        } else {
+          timerEl.innerText = "Now Live!";
+        }
+      }, 1000);
+    }
+
+    function openPopup(title, text) {
+      document.getElementById('popup-title').innerText = title;
+      document.getElementById('popup-text').innerText = text;
+      document.getElementById('popup').style.display = 'flex';
+    }
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

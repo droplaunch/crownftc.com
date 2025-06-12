@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crown Robot Logs - Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Share Tech Mono', monospace;
+      background: #fff;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .countdown {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .socials a {
+      color: #000;
+      font-size: 1.5rem;
+      margin: 0 1rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .socials a:hover {
+      color: #555;
+    }
+    .nav-link {
+      margin-top: 2rem;
+      font-size: 1rem;
+      text-decoration: underline;
+      color: #000;
+    }
+  </style>
+</head>
+<body onload="startCountdown()">
+  <h1>Crown Robot Logs</h1>
+  <p>🚧 Our blog is under construction. Stay tuned!</p>
+  <div class="countdown">
+    T–Minus: <span id="countdown-timer"></span> until AOC: Into the Deep 2025
+  </div>
+
+  <div class="socials">
+    <a href="mailto:team@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+    <a href="https://instagram.com/yourhandle" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://twitch.tv/crown_ftc" target="_blank" title="Twitch"><i class="fab fa-twitch"></i></a>
+    <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+  </div>
+
+  <a href="main.html" class="nav-link">← Back to Home</a>
+
+  <script>
+    function startCountdown() {
+      const targetDate = new Date("July 15, 2025 15:00:00").getTime();
+      const timerEl = document.getElementById("countdown-timer");
+      setInterval(() => {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance <= 0) {
+          timerEl.innerText = "We're Live!";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        timerEl.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
