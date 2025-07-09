@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crown FTC Booting Intro</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: rgb(255, 255, 255);
+      font-family: 'Courier New', Courier, monospace;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #terminal {
+      white-space: pre-line;
+      font-size: 1rem;
+      padding: 2rem;
+      max-width: 90%;
+    }
+
+    #enterBtn {
+      display: none;
+      margin-top: 2rem;
+      padding: 10px 20px;
+      background: rgb(0, 0, 0);
+      color: #ffffff;
+      border: none;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="terminal"></div>
+  <a href="main.html"><button id="enterBtn">Enter Site</button></a>
+
+  <script>
+    const terminal = document.getElementById('terminal');
+    const lines = [
+      "BOOTING CROWN FTC SYSTEM...",
+      "Initializing drive modules...",
+      "Loading CAD subsystems...",
+      "Establishing strategy links...",
+      "Syncing with alliances...",
+      ">>> ACCESS GRANTED",
+      "",
+      "WELCOME TO CROWN FTC"
+    ];
+
+    let i = 0;
+
+    function typeLine() {
+      if (i < lines.length) {
+        terminal.innerHTML += lines[i] + '\n';
+        i++;
+        setTimeout(typeLine, 700);
+      } else {
+        document.getElementById('enterBtn').style.display = 'inline-block';
+      }
+    }
+
+    window.onload = typeLine;
+  </script>
+</body>
+</html>
