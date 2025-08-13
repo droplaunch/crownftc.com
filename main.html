@@ -250,7 +250,7 @@ html {
   <main id="main" style="display: none;">
     <section class="hero">
       <h1>Welcome to Crown FTC</h1>
-      <p>Innovating Beyond Limits | UAE x India x APOC 2025</p>
+      <p>Innovating Beyond Limits | UAE x India</p>
     </section>
     <nav class="navbar">
   <a href="#about">
@@ -290,8 +290,7 @@ html {
   </a>
 </nav>
 <div id="countdown" class="countdown-timer">
-  Time until AOC "Into the Deep 2025": 
-  <strong id="time-remaining">--mo --d --h --m --s</strong>
+  Winner of the prestigious Judges Choice Award at APOC 2025
 </div>
     <section id='about' class="about">
       <h2>About Us</h2>
@@ -528,7 +527,8 @@ Recognized by UNESCO as a model outreach initiative promoting accessible and han
       <ul>
         <li>🏆 Innovate Award – India Nationals</li>
         <li>🏆 Winning Alliance Captain – UAE Nationals</li>
-        <li>🏆 Think Award – UAE Nationals</li>
+        <li>🏆 Judges Choice Award("Forging Ahead") – Asia Pacific Open Championship 2025</li>
+        <li>🏆 Deans List Recipient and Think Award – India Nationals</li>
       </ul>
     </section>
 <section id="sponsors" class="sponsors">
@@ -558,51 +558,10 @@ Recognized by UNESCO as a model outreach initiative promoting accessible and han
 </section>
 
     <footer>
-      <p>&copy; 2025 Crown FTC | Website designed by Gokul Shenoy |Built by the Team</p>
+      <p>&copy; 2025 Crown FTC | Website designed by <a href="https://www.linkedin.com/in/gokul-sanjeev-shenoy/">Gokul Shenoy</a> |Built by the Team</p>
     </footer>
   </main>
-  <script>
-    function enterSite() {
-      document.getElementById("intro").style.display = "none";
-      document.getElementById("main").style.display = "block";
-    }
-  </script>
-  <script>
-  function initCountdown() {
-    const endTime = new Date("July 15, 2025 15:00:00").getTime();
-    const display = document.getElementById("time-remaining");
 
-    function update() {
-      const now = Date.now();
-      const diff = endTime - now;
-
-      if (diff <= 0) {
-        display.innerText = "COMPETITION LIVE!";
-        clearInterval(timer);
-        return;
-      }
-
-      let seconds = Math.floor(diff / 1000);
-      const months = Math.floor(seconds / (30 * 24 * 60 * 60));
-      seconds %= 30 * 24 * 60 * 60;
-
-      const days    = Math.floor(seconds / (24 * 60 * 60));
-      seconds       %= 24 * 60 * 60;
-      const hours   = Math.floor(seconds / (60 * 60));
-      seconds       %= 60 * 60;
-      const minutes = Math.floor(seconds / 60);
-      seconds       %= 60;
-
-      display.innerText = 
-        `${months}mo ${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
-
-    update();
-    const timer = setInterval(update, 1000);
-  }
-
-  document.addEventListener("DOMContentLoaded", initCountdown);
-</script>
 
 </body>
 </html>
