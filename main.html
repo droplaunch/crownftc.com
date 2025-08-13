@@ -561,6 +561,48 @@ Recognized by UNESCO as a model outreach initiative promoting accessible and han
       <p>&copy; 2025 Crown FTC | Website designed by <a href="https://www.linkedin.com/in/gokul-sanjeev-shenoy/">Gokul Shenoy</a> |Built by the Team</p>
     </footer>
   </main>
+  <script>
+    function enterSite() {
+      document.getElementById("intro").style.display = "none";
+      document.getElementById("main").style.display = "block";
+    }
+  </script>
+  <script>
+  function initCountdown() {
+    const endTime = new Date("July 15, 2025 15:00:00").getTime();
+    const display = document.getElementById("time-remaining");
+
+    function update() {
+      const now = Date.now();
+      const diff = endTime - now;
+
+      if (diff <= 0) {
+        display.innerText = "COMPETITION LIVE!";
+        clearInterval(timer);
+        return;
+      }
+
+      let seconds = Math.floor(diff / 1000);
+      const months = Math.floor(seconds / (30 * 24 * 60 * 60));
+      seconds %= 30 * 24 * 60 * 60;
+
+      const days    = Math.floor(seconds / (24 * 60 * 60));
+      seconds       %= 24 * 60 * 60;
+      const hours   = Math.floor(seconds / (60 * 60));
+      seconds       %= 60 * 60;
+      const minutes = Math.floor(seconds / 60);
+      seconds       %= 60;
+
+      display.innerText = 
+        `${months}mo ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    update();
+    const timer = setInterval(update, 1000);
+  }
+
+  document.addEventListener("DOMContentLoaded", initCountdown);
+</script>
 
 
 </body>
