@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crown FTC | UAE Team Application</title>
+  <link rel="icon" href="logo.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Share Tech Mono', monospace;
+      background: #fff;
+      color: #000;
+      overflow-x: hidden;
+    }
+    .navbar {
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      font-family: 'Share Tech Mono', monospace;
+      border-bottom: 2px solid #0f0;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .navbar a:hover {
+      color: #0f0;
+      transform: scale(1.1);
+    }
+    .navbar svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+    .container {
+      max-width: 600px;
+      margin: 3rem auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #000;
+    }
+    p {
+      color: #222;
+      margin-bottom: 2rem;
+    }
+    .signup-btn, .close-btn {
+      padding: 10px 24px;
+      background-color: #000;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 6px;
+      margin: 0.5rem;
+      transition: transform 0.3s ease, background 0.2s;
+    }
+    .signup-btn:hover, .close-btn:hover {
+      background: #0f0;
+      color: #000;
+      transform: scale(1.05);
+    }
+    #form-container {
+      display: none;
+      margin-top: 2rem;
+      animation: fadeIn 0.7s;
+    }
+    iframe {
+      width: 100%;
+      height: 700px;
+      border: none;
+      border-radius: 8px;
+      background: #fff;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+  </style>
+  <script>
+    function showForm() {
+      document.getElementById('form-container').style.display = 'block';
+      window.scrollTo({ top: document.getElementById('form-container').offsetTop - 40, behavior: 'smooth' });
+    }
+    function closeForm() {
+      document.getElementById('form-container').style.display = 'none';
+    }
+  </script>
+</head>
+<body>
+   <h1 style="text-align: center;">Team Crown FTC</h1>
+      <p style="text-align: center;">Innovating Beyond Limits | UAE's first student-led First Tech Challenge Team</p>
+
+  <nav class="navbar">
+    
+    <a href="main.html">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 3.293l6 6V14a1 1 0 0 1-1 1h-3v-3H6v3H3a1 1 0 0 1-1-1v-4.707l6-6zm5 6.707V14h-2v-3a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3H3v-4.707l5-5 5 5z"/></svg>
+      Home
+    </a>
+    <a href="livestreams.html">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1 2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v11.5a.5.5 0 0 1-.8.4L10 11H2a1 1 0 0 1-1-1V2Z"/></svg>
+      Livestreams
+    </a>
+  </nav>
+  <div class="container">
+    <h1>Apply to Start a Crown FTC UAE Team</h1>
+    <p>
+      Interested in starting an official UAE-based FTC team under Crown? Fill out our sign-up form to begin your journey and join the Crown FTC community!
+    </p>
+    <button class="signup-btn" onclick="showForm()">Show Sign Up Form</button>
+    <div id="form-container">
+      <button class="close-btn" onclick="closeForm()">Close Form</button>
+      <div style="font-size: 1.5rem; padding: 2rem;">
+        🚧 <strong>Coming Soon</strong> 🚧<br>
+        <span style="font-size: 2rem;">👷‍♂️👷‍♀️</span>
+      </div>
+      <!-- <iframe src="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform?embedded=true">Loading…</iframe> -->
+    </div>
+  </div>
+</body>
+</html>
